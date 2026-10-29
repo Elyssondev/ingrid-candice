@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dras. Ingrid Candice | Odontologia Estética e Harmonização Orofacial</title>
+    
+    <!-- FAVICON SVG EMBEDDED WITH INITIALS "LA" -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23111111'/><circle cx='256' cy='256' r='240' fill='none' stroke='%23C5A059' stroke-width='6'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='%23C5A059' font-family='Playfair Display, Georgia, Times New Roman, serif' font-size='220' font-weight='500' letter-spacing='-5'>IC</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FBF8EF',
+                            100: '#F5ECDA',
+                            500: '#C5A059',
+                            600: '#BE9850',
+                            700: '#A37E3A',
+                        },
+                        brandDark: '#111111',
+                        brandMuted: '#555555',
+                        brandBg: '#F9FBFB',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F9FBFB;
+            color: #111111;
+        }
+        .pill-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-brandBg text-brandDark antialiased selection:bg-gold-500 selection:text-white relative">
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5588997336004?text=Ol%C3%A1%2C%20Dra.%20Livia%21%20Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20uma%20consulta." 
+       target="_blank" 
+       aria-label="Atendimento via WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-brandBg/90 backdrop-blur-md pt-6 pb-4 px-6 md:px-16 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo with Monogram Badge -->
+            <a href="#" class="flex items-center space-x-3 text-xl md:text-2xl font-bold tracking-tight text-brandDark">
+                <span class="w-9 h-9 rounded-full bg-brandDark text-gold-500 font-bold text-xs flex items-center justify-center border border-gold-500/30 shadow-sm">IC</span>
+                <span>Dras. Ingrid Candice</span>
+            </a>
+
+            <!-- Desktop Navigation Pill -->
+            <nav class="hidden md:flex items-center bg-white border border-gray-100/80 rounded-full px-7 py-3 pill-shadow space-x-8 text-sm font-medium text-brandMuted">
+                <a href="#sobre" class="text-gold-500 font-semibold transition-colors">Sobre</a>
+                <a href="#procedimentos" class="hover:text-gold-500 transition-colors">Procedimentos</a>
+                <a href="#lentes" class="hover:text-gold-500 transition-colors">Lentes Dentárias</a>
+                <a href="#harmonizacao" class="hover:text-gold-500 transition-colors">Harmonização</a>
+                <a href="#contato" class="hover:text-gold-500 transition-colors">Contato</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-brandDark focus:outline-none" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 bg-white rounded-2xl p-6 shadow-xl border border-gray-100 flex flex-col space-y-4 text-center font-medium text-brandMuted">
+            <a href="#sobre" onclick="toggleMobileMenu()" class="text-gold-500 py-2">Sobre</a>
+            <a href="#procedimentos" onclick="toggleMobileMenu()" class="hover:text-gold-500 py-2">Procedimentos</a>
+            <a href="#lentes" onclick="toggleMobileMenu()" class="hover:text-gold-500 py-2">Lentes Dentárias</a>
+            <a href="#harmonizacao" onclick="toggleMobileMenu()" class="hover:text-gold-500 py-2">Harmonização</a>
+            <a href="#contato" onclick="toggleMobileMenu()" class="hover:text-gold-500 py-2">Contato</a>
+            <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20Dra.%20Livia%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" onclick="toggleMobileMenu()" class="w-full bg-gold-500 hover:bg-gold-600 text-white font-semibold py-3 rounded-full transition-all block">
+                Agendar Consulta
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="px-6 md:px-16 pt-12 pb-20 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-7 space-y-8">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brandDark leading-[1.15]">
+                    Seu sorriso em boas mãos.<br class="hidden sm:inline"/>
+                    Saúde e estética dental com quem entende do assunto.
+                </h1>
+                <p class="text-lg md:text-xl text-brandMuted max-w-2xl font-normal leading-relaxed">
+                    Planejamento individualizado e aplicação das melhores práticas da harmonização orofacial moderna para destacar os seus traços com elegância e equilíbrio.
+                </p>
+                <div class="pt-2">
+                    <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20Dra.%20Livia%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="inline-block bg-gold-500 hover:bg-gold-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-all transform hover:-translate-y-0.5 shadow-md hover:shadow-lg">
+                        Agendar Consulta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Hero Image Showcase -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Dra. Livia Assunção no Consultório" 
+                         class="w-full h-[480px] object-cover object-center"
+                         onerror="this.src='https://placehold.co/600x800/f5ecda/be9850?text=Dra.+Livia+Assun%C3%A7%C3%A3o'">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6 text-white">
+                        <p class="text-xs uppercase tracking-widest text-gold-100 font-semibold mb-1">Atendimento VIP</p>
+                        <p class="text-lg font-medium">Atendimento Clínico VIP & Personalizado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SOBRE A ESPECIALISTA (Texto Esquerdo / Foto Direita) -->
+    <section id="sobre" class="px-6 md:px-16 py-24 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- LADO ESQUERDO: Texto Informativo & Métricas -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-sm font-semibold tracking-wider text-gold-500 uppercase block mb-2">Conheça a Especialista</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brandDark leading-tight">Ciência, Arte e Dedicação ao Seu Sorriso</h2>
+                    </div>
+
+                    <p class="text-brandMuted text-base md:text-lg leading-relaxed">
+                        A <strong class="text-brandDark">Dras. Ingrid Candice</strong> é referência em Odontologia Estética e Harmonização Orofacial. Sua atuação une o rigor técnico da ciência odontológica contemporânea a uma visão estética apurada, focada na harmonia natural e no bem-estar integral de cada paciente.
+                    </p>
+
+                    <p class="text-brandMuted text-base md:text-lg leading-relaxed">
+                        Com atendimento altamente individualizado, cada protocolo é elaborado após um diagnóstico minucioso da anatomia facial. O objetivo é aperfeiçoar o sorriso e renovar a autoestima sem exageros, preservando a essência e a elegância dos seus traços originais.
+                    </p>
+
+                    <!-- Diferenciais em Lista -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center space-x-3 text-brandDark font-medium text-sm md:text-base">
+                            <span class="w-6 h-6 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span>Planejamento Digital do Sorriso (DSD) com simulação tridimensional.</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-brandDark font-medium text-sm md:text-base">
+                            <span class="w-6 h-6 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span>Materiais cerâmicos de padrão ouro internacional.</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-brandDark font-medium text-sm md:text-base">
+                            <span class="w-6 h-6 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span>Ambiente exclusivo projetado para conforto absoluto e privacidade.</span>
+                        </div>
+                    </div>
+
+                    <!-- Métricas / Estatísticas -->
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-100">
+                        <div>
+                            <div class="text-3xl md:text-4xl font-extrabold text-gold-500 mb-1">+10</div>
+                            <div class="text-xs md:text-sm font-medium text-brandMuted">Anos de Experiência</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl md:text-4xl font-extrabold text-gold-500 mb-1">+2.500</div>
+                            <div class="text-xs md:text-sm font-medium text-brandMuted">Sorrisos Transformados</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl md:text-4xl font-extrabold text-gold-500 mb-1">100%</div>
+                            <div class="text-xs md:text-sm font-medium text-brandMuted">Atendimento Personalizado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LADO DIREITO: Foto da Dra. Livia Assunção -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Moldura de Destaque Traseira -->
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-gold-500/20 to-gold-100/50 rounded-3xl transform rotate-2"></div>
+                        
+                        <!-- Container da Imagem -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Foto da Dras. Ingrid Candice" 
+                                 class="w-full h-[520px] object-cover object-top"
+                                 onerror="this.src='https://placehold.co/600x800/111111/ffffff?text=Dra.+Livia'">
+                            
+                            <!-- Badges Estéticos sobre a Imagem -->
+                            <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full shadow-md border border-gray-100 flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span class="text-xs font-bold text-brandDark">Agenda Aberta</span>
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 bg-brandDark/90 backdrop-blur-md p-4 rounded-2xl text-white border border-white/10">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-full bg-gold-500 text-white font-bold flex items-center justify-center text-sm shrink-0">
+                                        IC
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm">Dras. Ingrid Candice</h4>
+                                        <p class="text-xs text-gray-300">Odontologia Estética & Harmonização Facial</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: PROCEDIMENTOS / ESPECIALIDADES -->
+    <section id="procedimentos" class="px-6 md:px-16 py-24 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm font-semibold tracking-wider text-brandMuted uppercase block mb-2">Tratamentos Exclusivos</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-brandDark mb-4">Soluções Completas para Saúde e Estética</h2>
+            <p class="text-brandMuted text-base md:text-lg">Procedimentos realizados com tecnologia de ponta, conforto absoluto e máxima precisão técnica.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-gold-50 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Lentes de Contato Dental</h3>
+                    <p class="text-brandMuted text-sm leading-relaxed mb-6">
+                        Lâminas ultra-finas em porcelana desenvolvidas sob medida para corrigir formato, alinhamento e tom dos dentes com extrema naturalidade.
+                    </p>
+                </div>
+                <a href="#lentes" class="text-gold-500 font-semibold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform">
+                    Saiba mais <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-gold-50 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Harmonização Orofacial</h3>
+                    <p class="text-brandMuted text-sm leading-relaxed mb-6">
+                        Preenchimento labial, toxina botulínica e bioestimuladores de colágeno para valorizar seus traços com equilíbrio e jovialidade.
+                    </p>
+                </div>
+                <a href="#harmonizacao" class="text-gold-500 font-semibold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform">
+                    Saiba mais <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-gold-50 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Clareamento Premium</h3>
+                    <p class="text-brandMuted text-sm leading-relaxed mb-6">
+                        Protocolo combinado (laser + caseiro supervisionado) para alcançar o tom ideal com proteção ao esmalte e controle de sensibilidade.
+                    </p>
+                </div>
+                <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Clareamento%20Premium." target="_blank" class="text-gold-500 font-semibold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform text-left">
+                    Agendar consulta <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-gold-50 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Alinhadores Invisíveis</h3>
+                    <p class="text-brandMuted text-sm leading-relaxed mb-6">
+                        Ortodontia moderna e imperceptível. Corrija o posicionamento dos dentes sem o desconforto e o impacto estético dos aparelhos convencionais.
+                    </p>
+                </div>
+                <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20Alinhadores%20Invis%C3%ADveis." target="_blank" class="text-gold-500 font-semibold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform text-left">
+                    Agendar avaliação <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-gold-50 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Reabilitação Oral & Implantes</h3>
+                    <p class="text-brandMuted text-sm leading-relaxed mb-6">
+                        Recuperação funcional e estética completa para casos simples ou complexos com implantes guiados de alta precisão.
+                    </p>
+                </div>
+                <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20Reabilita%C3%A7%C3%A3o%20Oral." target="_blank" class="text-gold-500 font-semibold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform text-left">
+                    Agendar avaliação <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-gold-50 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-face-smile text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">DTM e Dores Orofaciais</h3>
+                    <p class="text-brandMuted text-sm leading-relaxed mb-6">
+                        Tratamento focado no alívio de dores na articulação temporomandibular (ATM), bruxismo e tensão muscular facial.
+                    </p>
+                </div>
+                <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20uma%20consulta%20sobre%20DTM%20e%20Dores%20Orofaciais." target="_blank" class="text-gold-500 font-semibold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform text-left">
+                    Saiba mais <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT SECTION: LENTES DENTÁRIAS -->
+    <section id="lentes" class="px-6 md:px-16 py-24 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-sm font-semibold tracking-wider text-gold-500 uppercase block">Excelência em Lentes Dentárias</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brandDark">O Caminho para um Sorriso Perfeito e Duradouro</h2>
+                <p class="text-brandMuted text-base md:text-lg leading-relaxed">
+                    Com escaneamento 3D de alta definição e simulação prévia (mock-up), você consegue visualizar o resultado final do seu novo sorriso antes mesmo de iniciar o procedimento.
+                </p>
+
+                <!-- Step by step -->
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center font-bold text-sm shrink-0 mt-1">1</div>
+                        <div>
+                            <h4 class="font-bold text-brandDark">Mapeamento & Escaneamento 3D</h4>
+                            <p class="text-sm text-brandMuted">Registro digital tridimensional sem moldagens desconfortáveis.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center font-bold text-sm shrink-0 mt-1">2</div>
+                        <div>
+                            <h4 class="font-bold text-brandDark">Test Drive do Sorriso (Mock-up)</h4>
+                            <p class="text-sm text-brandMuted">Aplicação provisória na sua boca para aprovar formato e tamanho em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center font-bold text-sm shrink-0 mt-1">3</div>
+                        <div>
+                            <h4 class="font-bold text-brandDark">Confecção Artesanal em Porcelana</h4>
+                            <p class="text-sm text-brandMuted">Facetas confeccionadas com cerâmica de altíssima resistência e translucidez.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20Dra.%20Livia%21%20Gostaria%20de%20avaliar%20minhas%20Lentes%20Dent%C3%A1rias." target="_blank" class="inline-block bg-gold-500 hover:bg-gold-600 text-white font-semibold px-8 py-3.5 rounded-full transition-all">
+                        Quero Avaliar Minhas Lentes
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Right -->
+            <div class="lg:col-span-6">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-brandBg">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Sorriso Transformado Lentes de Contato Dental" 
+                         class="w-full h-[450px] object-cover"
+                         onerror="this.src='https://placehold.co/800x600/f5ecda/be9850?text=Lentes+Dentarias'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARMONIZAÇÃO OROFACIAL SECTION -->
+    <section id="harmonizacao" class="px-6 md:px-16 py-24 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 order-2 lg:order-1">
+                <div class="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1512290900676-26c2a48f4134?auto=format&fit=crop&q=80&w=800" 
+                         alt="Harmonização Orofacial Dra. Livia Assunção" 
+                         class="w-full h-[460px] object-cover"
+                         onerror="this.src='https://placehold.co/600x800/111111/ffffff?text=Harmonizacao'">
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                <span class="text-sm font-semibold tracking-wider text-brandMuted uppercase block">Equilíbrio & Delicadeza</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brandDark">Harmonização Orofacial com Resultados Naturais</h2>
+                <p class="text-brandMuted text-base md:text-lg leading-relaxed">
+                    A harmonização ideal respeita a anatomia individual e enaltece o que você tem de melhor. Na clínica da Dra. Livia Assunção, priorizamos a segurança e a sutileza em cada procedimento.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                        <i class="fa-solid fa-check text-gold-500 mb-2 text-lg"></i>
+                        <h4 class="font-bold text-brandDark mb-1">Preenchimento Labial</h4>
+                        <p class="text-xs text-brandMuted">Contorno, hidratação profunda e volume proporcional.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                        <i class="fa-solid fa-check text-gold-500 mb-2 text-lg"></i>
+                        <h4 class="font-bold text-brandDark mb-1">Toxina Botulínica</h4>
+                        <p class="text-xs text-brandMuted">Prevenção e suavização de linhas de expressão com naturalidade.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                        <i class="fa-solid fa-check text-gold-500 mb-2 text-lg"></i>
+                        <h4 class="font-bold text-brandDark mb-1">Bioestimuladores</h4>
+                        <p class="text-xs text-brandMuted">Estímulo do próprio colágeno para firmeza e sustentação da pele.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100">
+                        <i class="fa-solid fa-check text-gold-500 mb-2 text-lg"></i>
+                        <h4 class="font-bold text-brandDark mb-1">Esculpimento Facial</h4>
+                        <p class="text-xs text-brandMuted">Definição do contorno mandibular e malar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (EXCLUSIVAMENTE AGENDE SUA AVALIAÇÃO CENTRALIZADO) -->
+    <section id="contato" class="px-6 md:px-16 py-24 max-w-5xl mx-auto">
+        <div class="bg-white p-8 md:p-14 rounded-3xl border border-gray-100 shadow-sm text-center space-y-8">
+            <div>
+                <span class="text-sm font-semibold tracking-wider text-gold-500 uppercase block mb-2">Atendimento Exclusivo</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-brandDark">Agende Sua Avaliação</h2>
+                <p class="text-brandMuted text-base md:text-lg max-w-2xl mx-auto mt-3">
+                    Entre em contato diretamente pelo WhatsApp para escolher o melhor dia e horário para a sua consulta personalizada.
+                </p>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left">
+                <div class="bg-brandBg p-6 rounded-2xl flex items-start space-x-4">
+                    <div class="w-10 h-10 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brandDark text-sm">Atendimento</h4>
+                        <p class="text-sm text-brandMuted">Juazeiro do Norte - CE e Região</p>
+                    </div>
+                </div>
+
+                <div class="bg-brandBg p-6 rounded-2xl flex items-start space-x-4">
+                    <div class="w-10 h-10 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brandDark text-sm">Horário de Atendimento</h4>
+                        <p class="text-sm text-brandMuted">Segunda a Sexta: 08h às 18h<br/>Sábados: Com agendamento</p>
+                    </div>
+                </div>
+
+                <div class="bg-brandBg p-6 rounded-2xl flex items-start space-x-4">
+                    <div class="w-10 h-10 rounded-full bg-gold-50 text-gold-500 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brandDark text-sm">Telefone / WhatsApp</h4>
+                        <p class="text-sm text-brandMuted">(88) 99733-6004</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão Direto para o WhatsApp -->
+            <div class="pt-4">
+                <a href="https://wa.me/5588994424991?text=Ol%C3%A1%2C%20Dra.%20Livia%21%20Gostaria%20de%20agendar%20uma%20consulta." 
+                   target="_blank" 
+                   class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-10 py-4 rounded-full text-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-2xl mr-3"></i> Conversar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandDark text-white py-12 px-6 md:px-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="text-xl font-bold text-white flex items-center justify-center md:justify-start space-x-2">
+                    <span class="w-8 h-8 rounded-full bg-gold-500 text-brandDark font-bold text-xs flex items-center justify-center">LA</span>
+                    <span>Dras. Ingrid Candice</span>
+                </a>
+                <p class="text-xs text-gray-400 mt-2">© Dras. Ingrid Candice. Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="flex space-x-6 text-gray-400 text-lg">
+                <a href="https://wa.me/5588997336004" target="_blank" class="hover:text-gold-500 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-gold-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
